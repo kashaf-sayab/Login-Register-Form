@@ -1,0 +1,97 @@
+$primary-color: rgb(28, 145, 241);
+$hover-color: rgb(3, 156, 3); 
+$background-color: rgb(196, 225, 250);
+$container-bg-color: rgb(255, 255, 255);
+$border-color: rgb(243, 237, 232);
+$font-family: Arial, sans-serif;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  background-color: $background-color;
+  font-family: $font-family;
+}
+
+.container {
+  text-align: left;
+  border: 2px solid $border-color;
+  height: auto;
+  width: auto;
+  border-radius: 10px;
+  background-color: $container-bg-color;
+  padding: 20px;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  .form-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    label {
+      margin-bottom: 2px;
+    }
+
+    button {
+      background-color: $primary-color;
+      border: 0;
+      border-radius: 5px;
+      height: 30px;
+      width: 200px;
+      color: white;
+      cursor: pointer;
+      margin: 2px 0;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+  }
+
+  #login-form, #register-form {
+    text-align: left;
+    padding: 0;
+    height: auto;
+    width: 100%;
+
+    h1 {
+      text-align: center;
+    }
+
+    label, input {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid $border-color;
+      border-radius: 10px;
+    }
+
+    button {
+      height: 40px;
+      width: 100px;
+      background-color: $primary-color;
+      border: 0;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+      font-size: 16px;
+      margin: 20px auto;
+      display: block;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+  }
+  
+}

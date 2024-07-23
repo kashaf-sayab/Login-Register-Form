@@ -1,12 +1,12 @@
 <?php
+require_once 'Database.php';
+
 class User {
     private $db;
 
     public function __construct() {
-        $this->db = new mysqli('localhost', 'root', '', 'myDB');
-        if ($this->db->connect_error) {
-            die("Connection failed: " . $this->db->connect_error);
-        }
+        $database = new Database();
+        $this->db = $database->conn;
     }
 
     public function register($username, $email, $password) {

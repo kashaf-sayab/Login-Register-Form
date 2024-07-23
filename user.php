@@ -5,9 +5,10 @@ class User {
     private $db;
 
     public function __construct() {
-        $database = new Database();
+        $database = Database::getInstance();
         $this->db = $database->conn;
     }
+
 
     public function register($username, $email, $password) {
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);

@@ -37,5 +37,18 @@ class User {
             return false;
         }
     }
+    public function checkEmailExists($email) {
+        $stmt = $this->db->prepare("SELECT COUNT(*) FROM users WHERE email = ?");
+        if ($stmt) {
+            $stmt->bind_param('s', $email);
+            $stmt->execute();
+            $stmt->bind_result($count);
+            $stmt->fetch();
+            $stmt->close();
+            return $count > 0;
+        } else {
+            return false;
+        }
+    }
 }
 ?>

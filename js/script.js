@@ -7,14 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             const email = document.getElementById('login-email').value;
             const password = document.getElementById('login-password').value;
-            
-            if (!validateEmail(email)) {
-                alert('Please enter a valid email.');
-            } else if (!validatePassword(password)) {
-                alert('Password must be at least 8 characters long and contain a mix of letters, numbers, and special characters.');
-            } else {
-                alert('Login successful!');
-                loginForm.submit();
+            if (email === '' || password === '') {
+                alert('Please fill in all fields.');
+                return;
+            }
+            else{
+            alert('you successfuly login.');
+            loginForm.submit();
             }
         });
     }
